@@ -94,7 +94,7 @@ contract TBTCSystem is Ownable, ITBTCSystem, DepositLog {
     address private newEthBackedFactory;
 
     // price feed
-    uint256 priceFeedGovernanceTimeDelay = 90 days;
+    uint256 constant priceFeedGovernanceTimeDelay = 90 days;
     uint256 ethBtcPriceFeedAdditionInitiated;
     IMedianizer nextEthBtcPriceFeed;
 
