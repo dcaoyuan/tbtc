@@ -129,6 +129,10 @@ contract TBTCSystem is Ownable, ITBTCSystem, DepositLog {
         keepFactorySelection.initialize(_defaultKeepFactory);
         keepThreshold = _keepThreshold;
         keepSize = _keepSize;
+        initializedTimestamp = block.timestamp;
+        allowNewDeposits = true;
+
+        setTbtcDepositToken(_tbtcDepositToken);
 
         _vendingMachine.setExternalAddresses(
             _tbtcToken,
@@ -143,9 +147,6 @@ contract TBTCSystem is Ownable, ITBTCSystem, DepositLog {
             _feeRebateToken,
             address(_vendingMachine)
         );
-        setTbtcDepositToken(_tbtcDepositToken);
-        initializedTimestamp = block.timestamp;
-        allowNewDeposits = true;
     }
 
     /// @notice Returns whether new deposits should be allowed.
