@@ -57,7 +57,7 @@ contract VendingMachine is TBTCSystemAuthority{
             return 500 * 10 ** 18;
         }
 
-        return 21000000 * 10 ** 18;
+        return 21e6 * 10 ** 18;
     }
 
     /// @notice Set external contracts needed by the Vending Machine.
