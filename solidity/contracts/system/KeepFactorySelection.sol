@@ -82,7 +82,7 @@ library KeepFactorySelection {
     /// @return Selected keep factory.
     function selectFactoryAndRefresh(
         Storage storage _self
-    ) public returns (IBondedECDSAKeepFactory) {
+    ) external returns (IBondedECDSAKeepFactory) {
         IBondedECDSAKeepFactory factory = selectFactory(_self);
         refreshFactory(_self);
 
@@ -100,7 +100,7 @@ library KeepFactorySelection {
         uint256 _minimumBondableValue,
         uint256 _groupSize,
         uint256 _honestThreshold
-    ) public {
+    ) external {
         if (address(_self.keepStakeFactory) != address(0)) {
             _self.keepStakeFactory.setMinimumBondableValue(
                 _minimumBondableValue,
